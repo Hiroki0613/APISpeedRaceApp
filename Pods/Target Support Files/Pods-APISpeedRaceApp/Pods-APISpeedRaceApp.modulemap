@@ -1,0 +1,6 @@
+framework module Pods_APISpeedRaceApp {
+  umbrella header "Pods-APISpeedRaceApp-umbrella.h"
+
+  export *
+  module * { export * }
+}
