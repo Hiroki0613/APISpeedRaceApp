@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
-class CommunicationPattern:ViewController,XMLParserDelegate {
+class CommunicationPattern:UIViewController,XMLParserDelegate {
     
     // MARK: - ぐるなびAPI
       
@@ -68,6 +68,7 @@ class CommunicationPattern:ViewController,XMLParserDelegate {
                 
 //                self.waitingAPI1.text = "通信完了1"
 //                self.waitingAPI1.backgroundColor = .systemYellow
+
                print("通信完了1")
                 
                 

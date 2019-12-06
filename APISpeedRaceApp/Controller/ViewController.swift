@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class ViewController:UIViewController {
+class ViewController:CommunicationPattern {
     
     var communicationPattern = CommunicationPattern()
     
@@ -59,6 +59,10 @@ class ViewController:UIViewController {
                     DispatchQueue.main.async {
                       
                         self.communicationPattern.getGurnaviJapaneseRestaurantsAPI()
+                        
+                        //これだとエラーが出ても通信完了と出てしまう。
+                        self.waitingAPI1.text = "通信完了1"
+                        self.waitingAPI1.backgroundColor = .systemYellow
                     }
                     
                     //ここに２つ目のAPIを中に入れる
@@ -67,6 +71,8 @@ class ViewController:UIViewController {
                         DispatchQueue.main.async{
                             
                             self.communicationPattern.getMyJson()
+                            self.waitingAPI3.text = "通信完了3"
+                            self.waitingAPI3.backgroundColor = .systemYellow
                             
                         }
                     }
