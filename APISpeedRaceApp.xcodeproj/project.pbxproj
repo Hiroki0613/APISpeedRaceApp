@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,7 @@
 		F5BEE77A23955DB500C95559 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5BEE77823955DB500C95559 /* Main.storyboard */; };
 		F5BEE77C23955DF900C95559 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5BEE77B23955DF900C95559 /* Assets.xcassets */; };
 		F5BEE77F23955DF900C95559 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F5BEE77D23955DF900C95559 /* LaunchScreen.storyboard */; };
+		F5D53197239A6BDC001B0715 /* CommunicationPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D53196239A6BDC001B0715 /* CommunicationPattern.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		F5BEE77B23955DF900C95559 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F5BEE77E23955DF900C95559 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F5BEE78023955DF900C95559 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5D53196239A6BDC001B0715 /* CommunicationPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunicationPattern.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +50,6 @@
 				6AB9233B4DE56B8AFED9B589 /* Pods-APISpeedRaceApp.debug.xcconfig */,
 				73046738EB5E7153A6314444 /* Pods-APISpeedRaceApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -81,15 +82,40 @@
 		F5BEE77123955DB500C95559 /* APISpeedRaceApp */ = {
 			isa = PBXGroup;
 			children = (
-				F5BEE77223955DB500C95559 /* AppDelegate.swift */,
-				F5BEE77423955DB500C95559 /* SceneDelegate.swift */,
-				F5BEE77623955DB500C95559 /* ViewController.swift */,
-				F5BEE77823955DB500C95559 /* Main.storyboard */,
-				F5BEE77B23955DF900C95559 /* Assets.xcassets */,
-				F5BEE77D23955DF900C95559 /* LaunchScreen.storyboard */,
+				F5D53195239A6BAF001B0715 /* Model */,
+				F5D53194239A6B1F001B0715 /* View */,
+				F5D53193239A6B0B001B0715 /* Controller */,
 				F5BEE78023955DF900C95559 /* Info.plist */,
 			);
 			path = APISpeedRaceApp;
+			sourceTree = "<group>";
+		};
+		F5D53193239A6B0B001B0715 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F5BEE77623955DB500C95559 /* ViewController.swift */,
+				F5BEE77223955DB500C95559 /* AppDelegate.swift */,
+				F5BEE77423955DB500C95559 /* SceneDelegate.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F5D53194239A6B1F001B0715 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F5BEE77823955DB500C95559 /* Main.storyboard */,
+				F5BEE77B23955DF900C95559 /* Assets.xcassets */,
+				F5BEE77D23955DF900C95559 /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F5D53195239A6BAF001B0715 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F5D53196239A6BDC001B0715 /* CommunicationPattern.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5BEE77723955DB500C95559 /* ViewController.swift in Sources */,
+				F5D53197239A6BDC001B0715 /* CommunicationPattern.swift in Sources */,
 				F5BEE77323955DB500C95559 /* AppDelegate.swift in Sources */,
 				F5BEE77523955DB500C95559 /* SceneDelegate.swift in Sources */,
 			);
