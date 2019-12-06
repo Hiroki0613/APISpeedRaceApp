@@ -25,6 +25,15 @@ class ViewController: UIViewController {
     
         //API通信が完了してからボタンを表示
         goNextButton.isHidden = true
+        
+        //ラベルのコーナーを丸くする
+        waitingAPI1.layer.cornerRadius = 20
+        waitingAPI1.layer.masksToBounds = true
+        waitingAPI2.layer.cornerRadius = 20
+        waitingAPI2.layer.masksToBounds = true
+        waitingAPI3.layer.cornerRadius = 20
+        waitingAPI3.layer.masksToBounds = true
+        
     }
     
     
@@ -92,6 +101,7 @@ class ViewController: UIViewController {
                                 }
                                 
                                 self.waitingAPI1.text = "通信完了1"
+                                self.waitingAPI1.backgroundColor = .systemYellow
                                 
                                 
                             case .failure(let error):
