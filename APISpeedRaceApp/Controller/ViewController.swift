@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class ViewController: UIViewController {
+class ViewController:UIViewController {
     
     var communicationPattern = CommunicationPattern()
     
@@ -47,8 +47,8 @@ class ViewController: UIViewController {
                 DispatchQueue.global().async {
                     
                     DispatchQueue.main.async {
-                        
          
+                        self.communicationPattern.getGurunaviBigCategoryAPI()
                     }
                     //同期処理終了
                 }
@@ -57,8 +57,20 @@ class ViewController: UIViewController {
                 //カテゴリーでの検索結果を表示
                 DispatchQueue.global().async {
                     DispatchQueue.main.async {
-                                                
+                      
+                        self.communicationPattern.getGurnaviJapaneseRestaurantsAPI()
                     }
+                    
+                    //ここに２つ目のAPIを中に入れる
+                    
+                    DispatchQueue.global().async{
+                        DispatchQueue.main.async{
+                            
+                            self.communicationPattern.getMyJson()
+                            
+                        }
+                    }
+                    
                 }
     }
     
