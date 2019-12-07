@@ -51,41 +51,70 @@ class ViewController:CommunicationPattern {
     @IBAction func startCommunication(_ sender: Any) {
         
         //API通信を順番通りに行う
-        //大業態のカテゴリー取得
                 DispatchQueue.global().async {
                     
                     DispatchQueue.main.async {
          
-                        self.communicationPattern.getGurunaviBigCategoryAPI()
+                        doSomething(completion:{
+                            self.communicationPattern.getGurunaviBigCategoryAPI()
+                            semaphore.signal()
+                        })
+                        self.semaphore.wait()
+                        
+                        doSomething(completion:{
+                            self.communicationPattern.getGurnaviJapaneseRestaurantsAPI()
+                            
+                            //これだとエラーが出ても通信完了と出てしまう。
+                            self.waitingAPI1.text = "通信完了1"
+                            self.waitingAPI1.backgroundColor = .systemYellow
+                            semaphore.signal()
+                        })
+                        self.semaphore.wait()
+                        
+                        doSomething(completion:{
+                            self.communicationPattern.getMyJson()
+                            self.waitingAPI3.text = "通信完了3"
+                            self.waitingAPI3.backgroundColor = .systemYellow
+                            semaphore.signal()
+                        })
+                        self.semaphore.wait()
+                        
+                        
+                        
+                        
                     }
                     //同期処理終了
                 }
                 //非同期処理終了
                 
+        
+        
+        
+        
                 //カテゴリーでの検索結果を表示
-                DispatchQueue.global().async {
-                    DispatchQueue.main.async {
-                      
-                        self.communicationPattern.getGurnaviJapaneseRestaurantsAPI()
-                        
-                        //これだとエラーが出ても通信完了と出てしまう。
-                        self.waitingAPI1.text = "通信完了1"
-                        self.waitingAPI1.backgroundColor = .systemYellow
-                    }
-                    
-                    //ここに２つ目のAPIを中に入れる
-                    
-                    DispatchQueue.global().async{
-                        DispatchQueue.main.async{
-                            
-                            self.communicationPattern.getMyJson()
-                            self.waitingAPI3.text = "通信完了3"
-                            self.waitingAPI3.backgroundColor = .systemYellow
-                            
-                        }
-                    }
-                    
-                }
+//                DispatchQueue.global().async {
+//                    DispatchQueue.main.async {
+//
+//                        self.communicationPattern.getGurnaviJapaneseRestaurantsAPI()
+//
+//                        //これだとエラーが出ても通信完了と出てしまう。
+//                        self.waitingAPI1.text = "通信完了1"
+//                        self.waitingAPI1.backgroundColor = .systemYellow
+//                    }
+//
+//                    //ここに２つ目のAPIを中に入れる
+//
+//                    DispatchQueue.global().async{
+//                        DispatchQueue.main.async{
+//
+//                            self.communicationPattern.getMyJson()
+//                            self.waitingAPI3.text = "通信完了3"
+//                            self.waitingAPI3.backgroundColor = .systemYellow
+//
+//                        }
+//                    }
+//
+//                }
     }
     
     
