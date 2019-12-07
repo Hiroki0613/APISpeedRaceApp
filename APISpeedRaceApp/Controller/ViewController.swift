@@ -14,6 +14,14 @@ class ViewController:CommunicationPattern {
     
     var communicationPattern = CommunicationPattern()
     
+    //DispatchSemaphoreを使い、コードが順に制御されるようにする
+    let semaphore = DispatchSemaphore(value: 0)
+    /*
+     参考資料
+     DispatchSemaphoreで非同期処理の完了を待つ
+     https://scior.hatenablog.com/entry/2019/09/11/231626
+     */
+    
     
     @IBOutlet weak var waitingAPI1: UILabel!
     @IBOutlet weak var waitingAPI2: UILabel!
@@ -85,7 +93,6 @@ class ViewController:CommunicationPattern {
     @IBAction func goNext(_ sender: Any) {
         performSegue(withIdentifier: "next", sender: nil)
     }
-    
     
 
 }
