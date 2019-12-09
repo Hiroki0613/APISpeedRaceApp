@@ -30,6 +30,8 @@ class CommunicationPattern:UIViewController,XMLParserDelegate {
                      case .success(let happy):
                          let json:JSON = JSON(response.data as Any)
                          
+                         self.getGurnaviJapaneseRestaurantsAPI()
+                         
                      print("大業態への通信成功")
                          
                      case .failure(let error):

@@ -14,6 +14,7 @@ class ViewController:CommunicationPattern {
     
     var communicationPattern = CommunicationPattern()
     
+    
     //DispatchSemaphoreを使い、コードが順に制御されるようにする
     let semaphore = DispatchSemaphore(value: 0)
     /*
@@ -21,6 +22,7 @@ class ViewController:CommunicationPattern {
      DispatchSemaphoreで非同期処理の完了を待つ
      https://scior.hatenablog.com/entry/2019/09/11/231626
      */
+    
     
     
     @IBOutlet weak var waitingAPI1: UILabel!
@@ -49,7 +51,11 @@ class ViewController:CommunicationPattern {
     
     //API通信を開始
     @IBAction func startCommunication(_ sender: Any) {
+   
+        self.communicationPattern.getGurunaviBigCategoryAPI()
         
+        
+        /*
         //API通信を順番通りに行う
                 DispatchQueue.global().async {
                     
@@ -115,6 +121,8 @@ class ViewController:CommunicationPattern {
 //                    }
 //
 //                }
+ 
+         */
     }
     
     
