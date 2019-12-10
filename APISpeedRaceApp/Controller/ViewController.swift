@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class ViewController:CommunicationPattern {
+class ViewController:UIViewController {
     
     var communicationPattern = CommunicationPattern()
     
