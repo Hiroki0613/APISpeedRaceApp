@@ -10,7 +10,9 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class ViewController:UIViewController {
+class ViewController:UIViewController,successApiLabelChangeDelegate {
+   
+    
     
     var communicationPattern = CommunicationPattern()
     
@@ -46,7 +48,17 @@ class ViewController:UIViewController {
         waitingAPI3.layer.cornerRadius = 20
         waitingAPI3.layer.masksToBounds = true
         
+        
+        communicationPattern.delegate = self
     }
+    
+    
+    //プロトコルが発動する時に動くメソッド
+    //ここでをラベルのプロパティを変更する。
+    func changeLabelProperty() {
+        waitingAPI1.text = "通信完了"
+        waitingAPI1.backgroundColor = .systemYellow
+       }
     
     
     //API通信を開始
@@ -54,6 +66,8 @@ class ViewController:UIViewController {
    
         self.communicationPattern.getGurunaviBigCategoryAPI()
         
+        //ここでプロトコル発動
+        communicationPattern.changeLabel()
         
         /*
         //API通信を順番通りに行う

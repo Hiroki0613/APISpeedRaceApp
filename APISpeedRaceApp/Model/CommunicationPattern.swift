@@ -10,8 +10,33 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
+
+//プロトコルで、API通信時に"通信成功"、ラベルの色を黄色と出来るようにする
+protocol successApiLabelChangeDelegate {
+    
+    //ここのfuncによりラベルのプロパティを変更する
+    func changeLabelProperty()
+}
+
 class CommunicationPattern//:UIViewController,XMLParserDelegate
 {
+    
+    
+    var delegate:successApiLabelChangeDelegate? = nil
+    
+    func changeLabel(){
+        print("Labelのプロパティを経行します")
+        
+        //delegateがnilで無いときに、tableViewをreloadする
+        if let dg = self.delegate {
+            dg.changeLabelProperty()
+        } else {
+            print("何もしません")
+        }
+        
+    }
+    
+    
     
     // MARK: - ぐるなびAPI
       
