@@ -68,7 +68,7 @@ class CommunicationPattern//:UIViewController,XMLParserDelegate
     
     
     //ぐるなびAPIのレストラン一覧を取得
-    func getGurnaviJapaneseRestaurantsAPI(){
+    func getGurnaviJapaneseRestaurantsAPI() -> String{
         
                 
         let urlBigClassificationString = "https://api.gnavi.co.jp/RestSearchAPI/v3/?keyid=2f4c7acc59914e1efa7bc6eef258308f&hit_per_page=20&category_l=RSFST01000"
@@ -109,6 +109,8 @@ class CommunicationPattern//:UIViewController,XMLParserDelegate
                 print(error)
             }
         })
+        
+        return "ぐるなびAPI通信完了"
 
     }
  

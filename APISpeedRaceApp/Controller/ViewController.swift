@@ -56,7 +56,8 @@ class ViewController:UIViewController,successApiLabelChangeDelegate {
     //プロトコルが発動する時に動くメソッド
     //ここでをラベルのプロパティを変更する。
     func changeLabelProperty() {
-        waitingAPI1.text = "通信完了"
+//        waitingAPI1.text = "通信完了"
+        waitingAPI1.text = communicationPattern.getGurnaviJapaneseRestaurantsAPI()
         waitingAPI1.backgroundColor = .systemYellow
        }
     
