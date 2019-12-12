@@ -22,7 +22,17 @@ class CommunicationPattern//:UIViewController,XMLParserDelegate
 {
     
     
+    //ぐるなびAPIで格納しているものを持ってくる
+    var nameArray = [String]()
+    var addressArray = [String]()
+    var imageArray = [String]()
+    var latitudeArray = [String]()
+    var longitudeArray = [String]()
+    
+    
+    
     var delegate:successApiLabelChangeDelegate? = nil
+    
     
     func changeLabel(){
         print("Labelのプロパティを経行します")
@@ -92,6 +102,11 @@ class CommunicationPattern//:UIViewController,XMLParserDelegate
                     let latitude = json["rest"][i]["latitude"].string
                     let longitude = json["rest"][i]["longitude"].string
                     
+                    self.nameArray.append(shopName!)
+                    self.imageArray.append(shopImage!)
+                    self.addressArray.append(shopAddress!)
+                    self.latitudeArray.append(latitude!)
+                    self.longitudeArray.append(longitude!)
                     
                 }
                 

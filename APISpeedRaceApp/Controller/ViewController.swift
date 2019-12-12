@@ -13,6 +13,14 @@ import SwiftyJSON
 class ViewController:UIViewController,successApiLabelChangeDelegate {
    
     
+    //CommunicationPatternのぐるなびAPIで取得した配列をViewControllerに持ってくる
+    var nameArrayViewController = [String]()
+    var addressArrayViewController = [String]()
+    var imageArrayViewController = [String]()
+    var latitudeArrayViewController = [String]()
+    var longitudeArrayViewController = [String]()
+    
+    
     
     var communicationPattern = CommunicationPattern()
     
@@ -59,6 +67,18 @@ class ViewController:UIViewController,successApiLabelChangeDelegate {
 //        waitingAPI1.text = "通信完了"
         waitingAPI1.text = communicationPattern.getGurnaviJapaneseRestaurantsAPI()
         waitingAPI1.backgroundColor = .systemYellow
+        
+        
+        nameArrayViewController = communicationPattern.nameArray
+        addressArrayViewController = communicationPattern.imageArray
+        imageArrayViewController = communicationPattern.imageArray
+        latitudeArrayViewController = communicationPattern.latitudeArray
+        longitudeArrayViewController = communicationPattern.longitudeArray
+        
+        
+        print("hirohiro")
+        print(nameArrayViewController)
+        
        }
     
     
