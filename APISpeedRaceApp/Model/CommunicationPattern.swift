@@ -95,6 +95,10 @@ class CommunicationPattern//:UIViewController,XMLParserDelegate
                     
                 }
                 
+                //ここでプロトコル発動
+//                communicationPattern.changeLabel()
+                self.changeLabel()
+                
 //                self.waitingAPI1.text = "通信完了1"
 //                self.waitingAPI1.backgroundColor = .systemYellow
 

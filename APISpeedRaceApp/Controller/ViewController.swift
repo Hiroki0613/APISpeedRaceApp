@@ -66,8 +66,8 @@ class ViewController:UIViewController,successApiLabelChangeDelegate {
    
         self.communicationPattern.getGurunaviBigCategoryAPI()
         
-        //ここでプロトコル発動
-        communicationPattern.changeLabel()
+        //ここでプロトコル発動（発動場所を変更）
+//        communicationPattern.changeLabel()
         
         /*
         //API通信を順番通りに行う
