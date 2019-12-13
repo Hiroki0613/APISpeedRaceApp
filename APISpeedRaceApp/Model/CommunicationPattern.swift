@@ -66,6 +66,7 @@ class CommunicationPattern//:UIViewController,XMLParserDelegate
                      case .success(let happy):
                          let json:JSON = JSON(response.data as Any)
                          
+                         print("呼ばれている箇所")
                          self.getGurnaviJapaneseRestaurantsAPI()
                          
                      print("大業態への通信成功")
