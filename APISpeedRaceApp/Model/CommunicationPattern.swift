@@ -66,7 +66,6 @@ class CommunicationPattern//:UIViewController,XMLParserDelegate
                      case .success(let happy):
                          let json:JSON = JSON(response.data as Any)
                          
-                         print("呼ばれている箇所")
                          self.getGurnaviJapaneseRestaurantsAPI()
                          
                      print("大業態への通信成功")
@@ -95,8 +94,11 @@ class CommunicationPattern//:UIViewController,XMLParserDelegate
             switch secondResponce .result {
             case .success(let happy):
                 
+                                    
+                let json:JSON = JSON(secondResponce.data as Any)
+                
                 for i in 0...10{
-                    let json:JSON = JSON(secondResponce.data as Any)
+//                    let json:JSON = JSON(secondResponce.data as Any)
                     let shopName = json["rest"][i]["name"].string
                     let shopImage = json["rest"][i]["image_url"]["shop_image1"].string
                     let shopAddress = json["rest"][i]["address"].string
