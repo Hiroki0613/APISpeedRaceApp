@@ -25,6 +25,8 @@ class ViewController:UIViewController,successApiLabelChangeDelegate,resultDelega
     
     var gurunaviCommunication = GurunaviCommunication()
     
+    var myEditJsonCommunication = MyEditJsonCommunication()
+    
     
     //DispatchSemaphoreを使い、コードが順に制御されるようにする
     let semaphore = DispatchSemaphore(value: 0)
@@ -76,6 +78,10 @@ class ViewController:UIViewController,successApiLabelChangeDelegate,resultDelega
               
 //              print("hirohiro")
               print(nameArrayViewController)
+        
+        
+        //ここでMyEditJsonCommunicationの通信開始
+        myEditJsonCommunication.getMyJson()
               
     }
     

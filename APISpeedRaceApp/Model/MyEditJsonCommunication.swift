@@ -33,7 +33,7 @@ class MyEditJsonCommunication{
                    }
                    
 
-                   print("通信完了3")
+                   print("MyEditJSON通信完了3")
                    
                case .failure(let error):
                    print(error)

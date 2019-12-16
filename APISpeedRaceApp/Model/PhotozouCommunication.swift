@@ -9,7 +9,8 @@
 import Foundation
 
 
-class PhotozouCommunication{
+class PhotozouCommunication//:XMLParserDelegate
+{
     
 
  /*
@@ -114,7 +115,8 @@ class PhotozouCommunication{
         parseDoneSign = true
     }
  
+ */
  
-     */
+     
     
 }
