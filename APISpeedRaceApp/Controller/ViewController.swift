@@ -14,7 +14,7 @@ class ViewController:UIViewController,successApiLabelChangeDelegate,resultDelega
     
    
     
-    //CommunicationPatternのぐるなびAPIで取得した配列をViewControllerに持ってくる
+    //ぐるなびAPIで取得した配列をViewControllerに持ってくる
     var nameArrayViewController = [String]()
     var addressArrayViewController = [String]()
     var imageArrayViewController = [String]()
@@ -23,7 +23,7 @@ class ViewController:UIViewController,successApiLabelChangeDelegate,resultDelega
     
     
     
-    var communicationPattern = CommunicationPattern()
+    var gurunaviCommunication = GurunaviCommunication()
     
     
     //DispatchSemaphoreを使い、コードが順に制御されるようにする
@@ -58,8 +58,8 @@ class ViewController:UIViewController,successApiLabelChangeDelegate,resultDelega
         waitingAPI3.layer.masksToBounds = true
         
         
-        communicationPattern.delegate = self
-        communicationPattern.resultDelegate = self
+        gurunaviCommunication.delegate = self
+        gurunaviCommunication.resultDelegate = self
     }
     
     func resultString() {
@@ -67,11 +67,11 @@ class ViewController:UIViewController,successApiLabelChangeDelegate,resultDelega
               waitingAPI1.backgroundColor = .systemYellow
               
               
-              nameArrayViewController = communicationPattern.nameArray
-              addressArrayViewController = communicationPattern.imageArray
-              imageArrayViewController = communicationPattern.imageArray
-              latitudeArrayViewController = communicationPattern.latitudeArray
-              longitudeArrayViewController = communicationPattern.longitudeArray
+              nameArrayViewController = gurunaviCommunication.nameArray
+              addressArrayViewController = gurunaviCommunication.imageArray
+              imageArrayViewController = gurunaviCommunication.imageArray
+              latitudeArrayViewController = gurunaviCommunication.latitudeArray
+              longitudeArrayViewController = gurunaviCommunication.longitudeArray
               
               
 //              print("hirohiro")
@@ -85,15 +85,15 @@ class ViewController:UIViewController,successApiLabelChangeDelegate,resultDelega
     //ここでをラベルのプロパティを変更する。
     func changeLabelProperty() {
         waitingAPI1.text = "通信完了"
-        waitingAPI1.text = communicationPattern.resultString()
+        waitingAPI1.text = gurunaviCommunication.resultString()
         waitingAPI1.backgroundColor = .systemYellow
 
 
-        nameArrayViewController = communicationPattern.nameArray
-        addressArrayViewController = communicationPattern.imageArray
-        imageArrayViewController = communicationPattern.imageArray
-        latitudeArrayViewController = communicationPattern.latitudeArray
-        longitudeArrayViewController = communicationPattern.longitudeArray
+        nameArrayViewController = gurunaviCommunication.nameArray
+        addressArrayViewController = gurunaviCommunication.imageArray
+        imageArrayViewController = gurunaviCommunication.imageArray
+        latitudeArrayViewController = gurunaviCommunication.latitudeArray
+        longitudeArrayViewController = gurunaviCommunication.longitudeArray
 
 
         print("hirohiro")
@@ -105,7 +105,7 @@ class ViewController:UIViewController,successApiLabelChangeDelegate,resultDelega
     //API通信を開始
     @IBAction func startCommunication(_ sender: Any) {
    
-        self.communicationPattern.getGurunaviBigCategoryAPI()
+        self.gurunaviCommunication.getGurunaviBigCategoryAPI()
         
         //ここでプロトコル発動（発動場所を変更）
 //        communicationPattern.changeLabel()
