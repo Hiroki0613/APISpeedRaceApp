@@ -63,7 +63,7 @@ class ViewController:UIViewController,successApiLabelChangeDelegate,resultDelega
     }
     
     func resultString() {
-        waitingAPI1.text = communicationPattern.getGurnaviJapaneseRestaurantsAPI()
+        waitingAPI1.text = "ぐるなびAPI通信完了２"
               waitingAPI1.backgroundColor = .systemYellow
               
               
@@ -74,7 +74,7 @@ class ViewController:UIViewController,successApiLabelChangeDelegate,resultDelega
               longitudeArrayViewController = communicationPattern.longitudeArray
               
               
-              print("hirohiro")
+//              print("hirohiro")
               print(nameArrayViewController)
               
     }
@@ -84,21 +84,21 @@ class ViewController:UIViewController,successApiLabelChangeDelegate,resultDelega
     //プロトコルが発動する時に動くメソッド
     //ここでをラベルのプロパティを変更する。
     func changeLabelProperty() {
-//        waitingAPI1.text = "通信完了"
-//        waitingAPI1.text = communicationPattern.getGurnaviJapaneseRestaurantsAPI()
-//        waitingAPI1.backgroundColor = .systemYellow
-//
-//
-//        nameArrayViewController = communicationPattern.nameArray
-//        addressArrayViewController = communicationPattern.imageArray
-//        imageArrayViewController = communicationPattern.imageArray
-//        latitudeArrayViewController = communicationPattern.latitudeArray
-//        longitudeArrayViewController = communicationPattern.longitudeArray
-//
-//
-//        print("hirohiro")
-//        print(nameArrayViewController)
-//
+        waitingAPI1.text = "通信完了"
+        waitingAPI1.text = communicationPattern.resultString()
+        waitingAPI1.backgroundColor = .systemYellow
+
+
+        nameArrayViewController = communicationPattern.nameArray
+        addressArrayViewController = communicationPattern.imageArray
+        imageArrayViewController = communicationPattern.imageArray
+        latitudeArrayViewController = communicationPattern.latitudeArray
+        longitudeArrayViewController = communicationPattern.longitudeArray
+
+
+        print("hirohiro")
+        print(nameArrayViewController)
+
        }
     
     

@@ -125,6 +125,8 @@ class CommunicationPattern//:UIViewController,XMLParserDelegate
                     self.latitudeArray.append(latitude!)
                     self.longitudeArray.append(longitude!)
                     
+                    print("hirohiro\(count)")
+                    
                     //11回目のカウントがきたら、delegateを発動
                     if count == 11{
 
