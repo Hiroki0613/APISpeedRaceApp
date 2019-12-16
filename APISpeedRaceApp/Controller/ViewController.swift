@@ -10,7 +10,8 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class ViewController:UIViewController,successApiLabelChangeDelegate {
+class ViewController:UIViewController,successApiLabelChangeDelegate,resultDelegate {
+    
    
     
     //CommunicationPatternのぐるなびAPIで取得した配列をViewControllerに持ってくる
@@ -58,27 +59,46 @@ class ViewController:UIViewController,successApiLabelChangeDelegate {
         
         
         communicationPattern.delegate = self
+        communicationPattern.resultDelegate = self
     }
+    
+    func resultString() {
+        waitingAPI1.text = communicationPattern.getGurnaviJapaneseRestaurantsAPI()
+              waitingAPI1.backgroundColor = .systemYellow
+              
+              
+              nameArrayViewController = communicationPattern.nameArray
+              addressArrayViewController = communicationPattern.imageArray
+              imageArrayViewController = communicationPattern.imageArray
+              latitudeArrayViewController = communicationPattern.latitudeArray
+              longitudeArrayViewController = communicationPattern.longitudeArray
+              
+              
+              print("hirohiro")
+              print(nameArrayViewController)
+              
+    }
+    
     
     
     //プロトコルが発動する時に動くメソッド
     //ここでをラベルのプロパティを変更する。
     func changeLabelProperty() {
 //        waitingAPI1.text = "通信完了"
-        waitingAPI1.text = communicationPattern.getGurnaviJapaneseRestaurantsAPI()
-        waitingAPI1.backgroundColor = .systemYellow
-        
-        
-        nameArrayViewController = communicationPattern.nameArray
-        addressArrayViewController = communicationPattern.imageArray
-        imageArrayViewController = communicationPattern.imageArray
-        latitudeArrayViewController = communicationPattern.latitudeArray
-        longitudeArrayViewController = communicationPattern.longitudeArray
-        
-        
-        print("hirohiro")
-        print(nameArrayViewController)
-        
+//        waitingAPI1.text = communicationPattern.getGurnaviJapaneseRestaurantsAPI()
+//        waitingAPI1.backgroundColor = .systemYellow
+//
+//
+//        nameArrayViewController = communicationPattern.nameArray
+//        addressArrayViewController = communicationPattern.imageArray
+//        imageArrayViewController = communicationPattern.imageArray
+//        latitudeArrayViewController = communicationPattern.latitudeArray
+//        longitudeArrayViewController = communicationPattern.longitudeArray
+//
+//
+//        print("hirohiro")
+//        print(nameArrayViewController)
+//
        }
     
     

@@ -18,6 +18,14 @@ protocol successApiLabelChangeDelegate {
     func changeLabelProperty()
 }
 
+//通信を11回した時に、通信を終了させるdelegate
+protocol resultDelegate {
+    //ここのfuncによりラベルのプロパティを変更する
+    func resultString()
+}
+
+
+
 class CommunicationPattern//:UIViewController,XMLParserDelegate
 {
     
@@ -32,6 +40,7 @@ class CommunicationPattern//:UIViewController,XMLParserDelegate
     
     
     var delegate:successApiLabelChangeDelegate? = nil
+    var resultDelegate:resultDelegate? = nil
     
     
     func changeLabel(){
@@ -43,7 +52,7 @@ class CommunicationPattern//:UIViewController,XMLParserDelegate
         } else {
             print("何もしません")
         }
-        
+
     }
     
     
@@ -97,7 +106,12 @@ class CommunicationPattern//:UIViewController,XMLParserDelegate
                                     
                 let json:JSON = JSON(secondResponce.data as Any)
                 
+                //カウントを宣言　11回目の通信で通信を止めるため
+                var count = 0
+                
                 for i in 0...10{
+                    
+                    count = count + 1
 //                    let json:JSON = JSON(secondResponce.data as Any)
                     let shopName = json["rest"][i]["name"].string
                     let shopImage = json["rest"][i]["image_url"]["shop_image1"].string
@@ -110,6 +124,20 @@ class CommunicationPattern//:UIViewController,XMLParserDelegate
                     self.addressArray.append(shopAddress!)
                     self.latitudeArray.append(latitude!)
                     self.longitudeArray.append(longitude!)
+                    
+                    //11回目のカウントがきたら、delegateを発動
+                    if count == 11{
+
+                        if let dg = self.resultDelegate {
+                            print()
+                            dg.resultString()
+                            } else {
+                            print("何もしません")
+                        }
+                        
+                        return
+                    }
+
                     
                 }
                 
@@ -128,10 +156,18 @@ class CommunicationPattern//:UIViewController,XMLParserDelegate
             }
         })
         
-        return "ぐるなびAPI通信完了"
+        return "ぐるなびAPI通信完了です"
 
     }
  
+    
+    func resultString()->String{
+        return "ぐるなびAPI通信完了"
+    }
+    
+    
+    
+    
     
     /*
     
