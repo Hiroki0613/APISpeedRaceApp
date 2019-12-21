@@ -9,11 +9,12 @@
 import Foundation
 
 
-class PhotozouCommunication//:XMLParserDelegate
+class PhotozouCommunication2//:XMLParserDelegate
 {
     
 
- /*
+    /*
+ 
     
     // MARK: - フォト蔵API
       
@@ -115,8 +116,7 @@ class PhotozouCommunication//:XMLParserDelegate
         parseDoneSign = true
     }
  
- */
- 
+     */
      
     
 }

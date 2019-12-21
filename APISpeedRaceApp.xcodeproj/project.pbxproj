@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0543BF9FE567D8CAC9165FE9 /* Pods_APISpeedRaceApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFDB410CDE5B88AE1A0E8B68 /* Pods_APISpeedRaceApp.framework */; };
+		F58CD2A023AE5DC3000A8899 /* PhotozouCommunicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F58CD29F23AE5DC3000A8899 /* PhotozouCommunicationController.swift */; };
 		F5B0AAFD23A7BB49008D45A9 /* MyEditJsonCommunication.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B0AAFC23A7BB49008D45A9 /* MyEditJsonCommunication.swift */; };
-		F5B0AAFF23A7BBCB008D45A9 /* PhotozouCommunication.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B0AAFE23A7BBCB008D45A9 /* PhotozouCommunication.swift */; };
+		F5B0AAFF23A7BBCB008D45A9 /* PhotozouCommunicationController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5B0AAFE23A7BBCB008D45A9 /* PhotozouCommunicationController1.swift */; };
 		F5BEE77323955DB500C95559 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BEE77223955DB500C95559 /* AppDelegate.swift */; };
 		F5BEE77523955DB500C95559 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BEE77423955DB500C95559 /* SceneDelegate.swift */; };
 		F5BEE77723955DB500C95559 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BEE77623955DB500C95559 /* ViewController.swift */; };
@@ -23,8 +24,9 @@
 		6AB9233B4DE56B8AFED9B589 /* Pods-APISpeedRaceApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APISpeedRaceApp.debug.xcconfig"; path = "Target Support Files/Pods-APISpeedRaceApp/Pods-APISpeedRaceApp.debug.xcconfig"; sourceTree = "<group>"; };
 		73046738EB5E7153A6314444 /* Pods-APISpeedRaceApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-APISpeedRaceApp.release.xcconfig"; path = "Target Support Files/Pods-APISpeedRaceApp/Pods-APISpeedRaceApp.release.xcconfig"; sourceTree = "<group>"; };
 		BFDB410CDE5B88AE1A0E8B68 /* Pods_APISpeedRaceApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_APISpeedRaceApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F58CD29F23AE5DC3000A8899 /* PhotozouCommunicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotozouCommunicationController.swift; sourceTree = "<group>"; };
 		F5B0AAFC23A7BB49008D45A9 /* MyEditJsonCommunication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyEditJsonCommunication.swift; sourceTree = "<group>"; };
-		F5B0AAFE23A7BBCB008D45A9 /* PhotozouCommunication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotozouCommunication.swift; sourceTree = "<group>"; };
+		F5B0AAFE23A7BBCB008D45A9 /* PhotozouCommunicationController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotozouCommunicationController1.swift; sourceTree = "<group>"; };
 		F5BEE76F23955DB500C95559 /* APISpeedRaceApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = APISpeedRaceApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5BEE77223955DB500C95559 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F5BEE77423955DB500C95559 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -118,7 +120,8 @@
 			isa = PBXGroup;
 			children = (
 				F5D53196239A6BDC001B0715 /* GurunaviCommunication.swift */,
-				F5B0AAFE23A7BBCB008D45A9 /* PhotozouCommunication.swift */,
+				F58CD29F23AE5DC3000A8899 /* PhotozouCommunicationController.swift */,
+				F5B0AAFE23A7BBCB008D45A9 /* PhotozouCommunicationController1.swift */,
 				F5B0AAFC23A7BB49008D45A9 /* MyEditJsonCommunication.swift */,
 			);
 			path = Model;
@@ -239,8 +242,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5B0AAFF23A7BBCB008D45A9 /* PhotozouCommunication.swift in Sources */,
+				F5B0AAFF23A7BBCB008D45A9 /* PhotozouCommunicationController1.swift in Sources */,
 				F5BEE77723955DB500C95559 /* ViewController.swift in Sources */,
+				F58CD2A023AE5DC3000A8899 /* PhotozouCommunicationController.swift in Sources */,
 				F5D53197239A6BDC001B0715 /* GurunaviCommunication.swift in Sources */,
 				F5BEE77323955DB500C95559 /* AppDelegate.swift in Sources */,
 				F5B0AAFD23A7BB49008D45A9 /* MyEditJsonCommunication.swift in Sources */,
