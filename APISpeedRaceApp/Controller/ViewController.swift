@@ -24,7 +24,7 @@ class ViewController:UIViewController,successApiLabelChangeDelegate,resultDelega
     
     
     var gurunaviCommunication = GurunaviCommunication()
-    
+    var photozouCommunicationController = PhotozouCommunicationController()
     var myEditJsonCommunication = MyEditJsonCommunication()
     
     
@@ -80,9 +80,15 @@ class ViewController:UIViewController,successApiLabelChangeDelegate,resultDelega
               print(nameArrayViewController)
         
         
+
+              
+        //ここでphotozou通信開始
+        photozouCommunicationController.parserPrepare()
+
         //ここでMyEditJsonCommunicationの通信開始
         myEditJsonCommunication.getMyJson()
-              
+
+        
     }
     
     

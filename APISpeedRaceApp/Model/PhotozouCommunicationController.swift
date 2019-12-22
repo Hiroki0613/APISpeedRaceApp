@@ -24,13 +24,11 @@ class PhotozouCommunicationController: UIViewController,XMLParserDelegate {
 
        
        //urlはアラートビューで検索できるように設定
-       func parserPrepare(searchWord:String){
-           
-           print(searchWord)
-           
+       func parserPrepare(){
+                      
            //urlをstring型で記載
            //現時点では、trainで検索
-           let urlString: String = "https://api.photozou.jp/rest/search_public?type=photo&keyword=\(searchWord)"
+           let urlString: String = "https://api.photozou.jp/rest/search_public?type=photo"
            //日本語でURLを入力すると文字がおかしくなる問題を解消
            let encodeUrlString: String = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
            //url型に変換
@@ -111,6 +109,8 @@ class PhotozouCommunicationController: UIViewController,XMLParserDelegate {
        //解析_終了時
        func parserDidEndDocument(_ parser: XMLParser) {
            parseDoneSign = true
+        
+        print("photozouEMLパース終了")
        }
     
         
