@@ -8,6 +8,9 @@
 
 import UIKit
 
+
+//ここにプロトコルを入れて、通信が終了した後に、reloadされるようにする
+
 class PhotozouCommunicationController: UIViewController,XMLParserDelegate {
 
    

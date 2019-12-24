@@ -10,6 +10,8 @@ import Foundation
 import Alamofire
 import SwiftyJSON
 
+//ここにプロトコルを入れて、通信が終了した後に、reloadされるようにする
+
 class MyEditJsonCommunication{
     
     // MARK: - 自身で作成したJSONを取得
